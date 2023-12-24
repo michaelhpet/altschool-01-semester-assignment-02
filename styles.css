@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  font-family: "Sofia Pro", system-ui, sans-serif;
+}
+
+body {
+  background-color: rgba(46, 196, 182, 0.04);
+}
+
+main {
+  max-width: 1160px;
+  margin: 80px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 120px;
+  padding: 24px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+aside article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+aside article h1 {
+  font-family: "Brown-Bold", system-ui, sans-serif;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -0.8px;
+  font-weight: 700;
+  color: #000b0a;
+}
+
+aside article p {
+  font-family: "Brown-Regular", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 400;
+  color: #737373;
+}
+
+p.mobile {
+  display: none;
+}
+
+form {
+  max-width: 580px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 4px 50px 0px rgba(4, 8, 19, 0.1);
+  padding: 40px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 30px;
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+form input,
+form select {
+  width: 100%;
+  outline: none;
+  border: 1.5px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 14px 16px;
+  background-color: transparent;
+}
+
+form input:focus {
+  border: 1.5px solid rgb(46, 196, 182);
+  outline: 3px solid rgba(46, 196, 182, 0.06);
+}
+
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(/icons/caret-down.svg) 96% / 18px no-repeat transparent;
+}
+
+form div:has(#activity_level),
+form div:has(#password),
+button,
+p {
+  grid-column: span 2;
+}
+
+form div:has(#activity_level) select {
+  background: url(/icons/caret-down.svg) 96% / 18px no-repeat transparent;
+}
+
+form div:has(#password) input {
+  background: url(/icons/eye.svg) 96% / 18px no-repeat transparent;
+}
+
+form div:has(#date_of_birth) input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(/icons/calendar.svg) 96% / 18px no-repeat transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+form button {
+  border: none;
+  outline: none;
+  padding: 16px;
+  text-align: center;
+  background-color: #2ec4b6;
+  color: white;
+  border-radius: 4px;
+  filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.1));
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+form button:hover {
+  background-color: #22b6a7;
+}
+
+form p {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+}
+
+form p a {
+  color: #2ec4b6;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  text-decoration-line: underline;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    gap: 40px;
+    margin: 0;
+    padding: 30px 24px;
+  }
+
+  form {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  aside article p {
+    display: none;
+  }
+
+  p.mobile {
+    display: block !important;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+  }
+}
